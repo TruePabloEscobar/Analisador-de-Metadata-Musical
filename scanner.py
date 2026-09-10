@@ -99,6 +99,10 @@ class ScanStats:
 
 
 def _text(value: object) -> str:
+    if getattr(value, "FrameID", None) == "RVA2":
+        # ChannelSpec accepts a byte (0..255), but Mutagen's __str__
+        # indexes a nine-element channel-name list without checking it.
+        return f"channel={value.channel}; gain={value.gain:+.4f} dB; peak={value.peak:.4f}"
     if isinstance(value, (list, tuple)):
         return "; ".join(_text(item) for item in value)
     if isinstance(value, bytes):
@@ -347,7 +351,11 @@ def scan_library(folder: Path, recursive: bool, cancel: threading.Event, progres
     for index, path in enumerate(files, 1):
         if cancel.is_set():
             break
-        result = scan_one(path)
+        try:
+            result = scan_one(path)
+        except Exception as exc:
+            import traceback
+            result = ScanResult({"Filename": path.name, "Full Path": str(path), "Scan Status": "METADATA_READ_ERROR"}, [], (type(exc).__name__, traceback.format_exc()))
         results.append((path, result))
         if result.error:
             errors.append((path, result.error[0], result.error[1]))
