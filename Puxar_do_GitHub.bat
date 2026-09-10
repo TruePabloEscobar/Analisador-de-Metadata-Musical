@@ -3,8 +3,8 @@ setlocal EnableExtensions EnableDelayedExpansion
 chcp 65001 >nul
 title Puxar Track Scanner do GitHub
 
-set "PROJECT_DIR=T:\Track Scanner"
-set "PARENT_DIR=T:\"
+set "PROJECT_DIR=%~dp0"
+for %%D in ("%PROJECT_DIR%..") do set "PARENT_DIR=%%~fD"
 set "REPO_URL=https://github.com/TruePabloEscobar/Analisador-de-Metadata-Musical.git"
 set "BRANCH=main"
 

@@ -1,7 +1,6 @@
 TRACK SCANNER - ARQUIVOS DE GIT
 
-Copie estes arquivos para:
-T:\Track Scanner
+Coloque estes arquivos na pasta do projeto.
 
 - .gitignore
 - Verificar_Open_Source.ps1
@@ -22,7 +21,7 @@ O envio:
 PARA PUXAR:
 Execute Puxar_do_GitHub.bat.
 
-Se T:\Track Scanner nao existir, ele clona o repositorio.
+Se a pasta do projeto nao existir, ele clona o repositorio.
 Se houver mudancas locais nao commitadas, ele cancela para nao sobrescrever trabalho.
 
 Repositorio:

@@ -12,7 +12,6 @@ from scanner import GROUPS, scan_library
 from app import App
 
 
-# A biblioteca real nunca deve ficar hardcoded no repositório público. Afinal quem seria estupido de fazer isso de proposito? ... ah é... A IA FARIA!
 # Defina TRACK_SCANNER_TEST_LIBRARY somente no computador onde o teste será executado.
 source_value = os.environ.get("TRACK_SCANNER_TEST_LIBRARY")
 
@@ -45,8 +44,7 @@ output = Path("validation/real-1.1.0").resolve()
 output.mkdir(parents=True, exist_ok=True)
 
 
-# Snapshot simples para confirmar que o scanner não alterou nada dos bagui interno
-# tamanho nem timestamp dos arquivos da biblioteca.
+# Snapshot simples para confirmar que o scanner não alterou tamanho nem timestamp.
 before = {
     p: (p.stat().st_size, p.stat().st_mtime_ns)
     for p in source.iterdir()

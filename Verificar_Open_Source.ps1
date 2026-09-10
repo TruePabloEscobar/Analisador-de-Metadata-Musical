@@ -1,5 +1,5 @@
 ﻿param(
-    [string]$ProjectRoot = "T:\Track Scanner"
+    [string]$ProjectRoot = $PSScriptRoot
 )
 
 $ErrorActionPreference = "Stop"
@@ -27,7 +27,7 @@ $patterns = [ordered]@{
     "Chave privada" = '-----BEGIN (RSA |EC |OPENSSH |DSA )?PRIVATE KEY-----'
     "Segredo hardcoded" = '(?i)\b(api[_-]?key|client[_-]?secret|access[_-]?token|refresh[_-]?token|password)\b\s*[:=]\s*["''][^"'']{6,}["'']'
     "Caminho de usuario Windows" = '(?i)[A-Z]:\\Users\\[^\\\r\n]+'
-    "Caminho da biblioteca musical pessoal" = '(?i)M:\\IA HERE\\Pablo Escobar Music 2027'
+    "Caminho absoluto de biblioteca musical" = '(?i)[A-Z]:\\(?:[^\\\r\n]+\\)*(?:music|música|library|biblioteca)(?:[^\\\r\n]*)'
     "CPF em formato comum" = '\b\d{3}\.?\d{3}\.?\d{3}-?\d{2}\b'
 }
 
