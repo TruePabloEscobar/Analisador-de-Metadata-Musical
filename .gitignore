@@ -1,0 +1,96 @@
+# Track Metadata Scanner - arquivos que NAO devem ir para o repositorio
+
+# Python / ambientes locais
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+ENV/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Build / binarios gerados
+build/
+dist/
+*.exe
+
+# IDE / sistema operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs / temporarios
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+~$*
+
+# Segredos / configuracoes locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+credentials*.json
+credential*.json
+secrets*.json
+secret*.json
+token*.txt
+settings.local.*
+config.local.*
+local_config.*
+user_settings.*
+
+# Relatorios e dados gerados pelo scanner
+metadata_scan_*.xlsx
+metadata_scan_*.xls
+metadata_scan_*.csv
+*_metadata_scan_*.xlsx
+*_metadata_scan_*.csv
+Relatorio/
+Relatorios/
+reports/
+report/
+output/
+outputs/
+exports/
+
+# Bancos/cache locais
+*.db
+*.sqlite
+*.sqlite3
+cache/
+.cache/
+
+# Bibliotecas musicais e midia pessoal
+*.mp3
+*.wav
+*.flac
+*.aif
+*.aiff
+*.m4a
+*.aac
+*.ogg
+*.opus
+*.wma
+
+# Arquivos compactados
+*.zip
+*.rar
+*.7z
+
+# Para testes com audio, prefira fixtures sinteticas geradas em runtime.
+# Se precisar versionar uma fixture, revise manualmente e use git add -f conscientemente.

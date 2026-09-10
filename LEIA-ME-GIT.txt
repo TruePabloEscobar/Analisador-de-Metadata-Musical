@@ -1,0 +1,32 @@
+TRACK SCANNER - ARQUIVOS DE GIT
+
+Copie estes arquivos para:
+T:\Track Scanner
+
+- .gitignore
+- Verificar_Open_Source.ps1
+- Enviar_para_GitHub.bat
+- Puxar_do_GitHub.bat
+
+PRIMEIRO ENVIO:
+Execute Enviar_para_GitHub.bat.
+
+O envio:
+- verifica segredos, caminhos pessoais e arquivos locais comuns;
+- respeita o .gitignore;
+- preserva/sincroniza o LICENSE existente no GitHub;
+- usa e-mail GitHub noreply no repositorio local se nenhum e-mail local estiver configurado;
+- mostra o que sera commitado antes do push;
+- envia para main.
+
+PARA PUXAR:
+Execute Puxar_do_GitHub.bat.
+
+Se T:\Track Scanner nao existir, ele clona o repositorio.
+Se houver mudancas locais nao commitadas, ele cancela para nao sobrescrever trabalho.
+
+Repositorio:
+https://github.com/TruePabloEscobar/Analisador-de-Metadata-Musical
+
+Licenca:
+GNU GPL v3.
